@@ -1,0 +1,47 @@
+@use './variables' as var;
+
+$container-size : 45rem;
+
+.card-image-container
+{
+    width: $container-size + 10rem;
+    height: $container-size;
+
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+
+    position : relative;
+
+    & img
+    {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+        border-top-right-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+    }
+
+    &::after
+    {
+        width: 100%;
+        height: 100%;
+
+        content: '';
+
+        background-color: var.$color-accent;
+
+        position: absolute;
+
+        left : 0;
+        top : 0;
+
+        opacity: .75;
+        mix-blend-mode: hard-light;
+        border-top-right-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+
+        box-shadow: .1rem .1rem 1rem var.$color-accent;
+    }
+    // outline: 2px solid red;
+}

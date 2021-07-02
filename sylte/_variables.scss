@@ -1,0 +1,43 @@
+// Typograph
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap');
+
+// Color
+$color-main-backgorund : hsl(233, 47%, 7%);
+$color-card-background : hsl(244, 38%, 16%);
+$color-accent : hsl(277,64%,61%);
+
+$color-white : hsl(0, 0%, 100%);
+$color-main-paragraph : hsla(0, 0%, 100%, 0.75);
+$color-stat-headings : hsla(0,0%,100%, 0.6);
+
+// font family
+$font-Inter : 'Inter', sans-serif;
+$font-lexend : 'Lexend Deca', sans-serif;
+
+// Size
+$size-mobile : 375px;
+
+
+// 가운데 정렬
+@mixin center()
+{
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+
+// Media query
+@mixin Mobile
+{
+    @media screen and (max-width : $size-mobile) {
+        @content;
+    }
+}
+@mixin Desktop
+{
+    @media screen and (min-width : $size-mobile + 1px) {
+        @content;
+    }
+}

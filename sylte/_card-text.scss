@@ -1,0 +1,77 @@
+@use './variables' as var;
+
+$container-size : 45rem;
+
+
+.card-text-container
+{
+    width: $container-size;
+    height : $container-size;
+
+    @include var.center();
+
+    flex-direction: column;
+
+    padding-left: 3rem;
+    // outline : 2px solid tomato;
+
+    background-color: var.$color-card-background;
+    border-bottom-left-radius: 1rem;
+    border-top-left-radius: 1rem;
+    box-shadow: -.1rem .1rem 1rem var.$color-card-background;
+    @at-root .card-text-mainbox, .card-text-footerbox
+    {
+        width : $container-size / 1.2;
+        color : var.$color-white;
+
+        // outline: 2px solid gold;
+    }
+}
+
+.card-text-mainbox
+{
+    & h1
+    {
+        font-size: 3rem;
+        line-height: 1.3;
+
+        padding-bottom: 2rem;
+        & .voilet
+        {
+            color : var.$color-accent;
+        }
+    }
+
+    & p
+    {
+        font-size: 1.5rem;
+        color : var.$color-main-paragraph;
+        line-height: 1.6;
+    }
+}
+
+.card-text-footerbox
+{
+    padding-top: 5rem;
+    display: flex;
+    
+
+    & .itembox
+    {
+        flex-basis: 12rem;
+        & h2
+        {
+            font-size: 2.5rem;
+            // outline: 1px dashed darkgray;
+        }
+        & p
+        {
+            font-size: 1.3rem;
+            color : var.$color-stat-headings;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+
+            // outline: 1px dashed darkcyan;
+        }
+    }
+}

@@ -1,0 +1,43 @@
+@use 'variables' as var;
+
+
+*,
+*::before,
+*::after
+{
+    margin : 0;
+    padding : 0;
+    box-sizing: border-box;
+}
+
+html
+{
+    font-size: 62.5%;
+}
+
+body
+{
+    min-height: 100vh;
+    font-size: 1.5rem;
+    
+    @include var.center();
+
+    margin : auto 0;
+
+    background-color: var.$color-main-backgorund;
+}
+
+.wrapper
+{
+    @include var.center();
+
+    @include var.Desktop()
+    {
+        flex-direction: row;
+    }
+    @include var.Mobile()
+    {
+        flex-direction: column-reverse;
+    }
+}
+
