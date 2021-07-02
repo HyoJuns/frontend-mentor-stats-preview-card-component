@@ -1,15 +1,40 @@
 @use './variables' as var;
 
 $container-size : 45rem;
+$container-mobile-size : 25rem;
+
+@mixin radius
+{
+    @include var.Mobile
+    {
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+    }
+    @include var.Desktop
+    {
+        border-top-right-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+    }   
+}
 
 .card-image-container
 {
-    width: $container-size + 10rem;
-    height: $container-size;
+    @include var.Mobile
+    {
+        width: $container-mobile-size + 10rem;
+        height: $container-mobile-size;
 
-    border-top-right-radius: 1rem;
-    border-bottom-right-radius: 1rem;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+    }
+    @include var.Desktop
+    {
+        width: $container-size + 10rem;
+        height: $container-size;
 
+        border-top-right-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+    }
     position : relative;
 
     & img
@@ -18,8 +43,8 @@ $container-size : 45rem;
         height: 100%;
         object-fit: cover;
 
-        border-top-right-radius: 1rem;
-        border-bottom-right-radius: 1rem;
+        @include radius();
+        
     }
 
     &::after
@@ -38,8 +63,7 @@ $container-size : 45rem;
 
         opacity: .75;
         mix-blend-mode: hard-light;
-        border-top-right-radius: 1rem;
-        border-bottom-right-radius: 1rem;
+        @include radius();
 
         box-shadow: .1rem .1rem 1rem var.$color-accent;
     }

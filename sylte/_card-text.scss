@@ -1,12 +1,29 @@
 @use './variables' as var;
 
 $container-size : 45rem;
-
+$container-mobile-size : 35rem;
 
 .card-text-container
 {
-    width: $container-size;
-    height : $container-size;
+    @include var.Desktop
+    {
+        width: $container-size;
+        height : $container-size;
+
+        border-bottom-left-radius: 1rem;
+        border-top-left-radius: 1rem;
+    }
+    @include var.Mobile
+    {
+        width: $container-mobile-size;
+        height : $container-mobile-size * 1.6;
+
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+
+        // outline: 2px solid red;
+    }
+    
 
     @include var.center();
 
@@ -16,12 +33,19 @@ $container-size : 45rem;
     // outline : 2px solid tomato;
 
     background-color: var.$color-card-background;
-    border-bottom-left-radius: 1rem;
-    border-top-left-radius: 1rem;
+    
     box-shadow: -.1rem .1rem 1rem var.$color-card-background;
     @at-root .card-text-mainbox, .card-text-footerbox
     {
-        width : $container-size / 1.2;
+        @include var.Desktop
+        {
+            width : $container-size / 1.2;
+        }
+        @include var.Mobile
+        {
+            width : $container-mobile-size / 1.2;
+            
+        }
         color : var.$color-white;
 
         // outline: 2px solid gold;
@@ -30,10 +54,15 @@ $container-size : 45rem;
 
 .card-text-mainbox
 {
+    @include var.Mobile
+    {
+        text-align: center;
+    }
     & h1
     {
+        
         font-size: 3rem;
-        line-height: 1.3;
+        line-height: 1.5;
 
         padding-bottom: 2rem;
         & .voilet
@@ -55,10 +84,19 @@ $container-size : 45rem;
     padding-top: 5rem;
     display: flex;
     
-
+    @include var.Mobile
+    {
+        flex-direction: column;
+        text-align: center;
+    }
     & .itembox
     {
         flex-basis: 12rem;
+        @include var.Mobile
+        {
+            flex-basis: 8rem;
+        }
+        
         & h2
         {
             font-size: 2.5rem;
