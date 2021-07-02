@@ -8,11 +8,7 @@
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
-- [Author](#author)
-- [Acknowledgments](#acknowledgments)
+
 
 ## Overview
 
@@ -26,3 +22,17 @@ Users should be able to:
 
 ![Desktop](./screenshots/desktop.png)
 ![Mobile](./screenshots/mobile.png)
+
+### Links
+
+- Solution URL: [Add solution URL here](https://github.com/HyoJuns/frontend-mentor-stats-preview-card-component)
+- Live Site URL: [Add live site URL here](https://hyojuns.github.io/frontend-mentor-stats-preview-card-component/)
+
+## My process
+
+### Built with
+
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- SASS
